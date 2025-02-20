@@ -1,0 +1,5 @@
+python -m venv .venv (create virtual environement)
+.\.venv\Scripts\activate (activate the virtual environement)
+install -r requirements.txt (install all)
+cd App
+streamlit run streamlit_app.py (You will be able to see chatbot in your browser)
