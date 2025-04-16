@@ -2,7 +2,7 @@
 import os
 from langchain.schema import Document
 from langchain_openai import OpenAIEmbeddings
-from langchain.vectorstores.faiss import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from models import Product
 
