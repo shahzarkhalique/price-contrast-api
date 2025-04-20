@@ -16,5 +16,5 @@ def create_qa_chain(vector_db):
         "Question: {input}"
     )
     document_chain = create_stuff_documents_chain(llm, prompt)
-    retriever = vector_db.as_retriever(search_kwargs={"k": 3})
+    retriever = vector_db.as_retriever(search_kwargs={"k": 5})
     return create_retrieval_chain(retriever, document_chain)
