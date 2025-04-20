@@ -8,12 +8,13 @@ def create_qa_chain(vector_db):
     prompt = ChatPromptTemplate.from_template(
         "You are a helpful assistant for a price comparison website. "
         "If the question is a greeting like 'hello', 'hi', or 'how are you', ignore the context and respond with 'Hello! How can I assist you today?' "
-        "For other questions, use only the provided context to answer concisely and accurately. "
+        "For other questions, use the provided conversation history and context to answer concisely and accurately. "
         "Prices are in Rupees (format as Rs. X). If no price is available, say 'Price not listed'. "
         "Context contains product names, stores, and prices (if available). "
         "Only include products if the question is about products, stores, or prices. "
-        "<context>{context}</context> "
-        "Question: {input}"
+        "Conversation History: {input} "
+        "Context: <context>{context}</context> "
+        "Current Question: Extract the last question from the input and answer it."
     )
     document_chain = create_stuff_documents_chain(llm, prompt)
     retriever = vector_db.as_retriever(search_kwargs={"k": 5})

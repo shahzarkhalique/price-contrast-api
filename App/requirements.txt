@@ -1,0 +1,17 @@
+langchain 
+openai 
+fastapi 
+uvicorn 
+pydantic
+langchain_community
+langchain_ollama
+uvicorn
+langserve
+python-dotenv
+sse_starlette
+sqlalchemy 
+faiss-cpu
+psycopg2
+pypdf
+chromadb
+langchain-openai
