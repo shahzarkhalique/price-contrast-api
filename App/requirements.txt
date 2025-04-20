@@ -14,8 +14,4 @@ faiss-cpu
 psycopg2
 pypdf
 chromadb
-<<<<<<< HEAD
 langchain-openai
-=======
-langchain-openai
->>>>>>> e491e26c66c5eed6c652d47520759270789bde7a
