@@ -25,11 +25,3 @@ The Price Contrast Chatbot is a conversational AI tool for querying clothing pro
 - OpenAI API key (for ChatGPT integration)
 - Render account (optional, for deployment)
 
-## Installation
-
-### 1. Clone the Repository
-
-
-```bash
-git clone https://github.com/your-username/price-contrast-chatbot.git
-cd price-contrast-chatbot
