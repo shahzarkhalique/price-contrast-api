@@ -29,7 +29,7 @@ class ProductDB(Base):
     store_id = Column(Integer, ForeignKey("stores.store_id"), nullable=False)
     product_name = Column(String, nullable=False)
     product_url = Column(String)
-    image_url = Column(String)
+    image_urls = Column(String)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     store = relationship("Store")
@@ -56,7 +56,7 @@ def get_all_products():
                 id=p.ProductDB.product_id,
                 name=p.ProductDB.product_name,
                 price=p.price if p.price is not None else None,
-                image=p.ProductDB.image_url,
+                image=p.ProductDB.image_urls,
                 url=p.ProductDB.product_url,
                 store=p.store_name
             )
@@ -83,7 +83,7 @@ def get_new_products(last_max_id):
                 id=p.ProductDB.product_id,
                 name=p.ProductDB.product_name,
                 price=p.price if p.price is not None else None,
-                image=p.ProductDB.image_url,
+                image=p.ProductDB.image_urls,
                 url=p.ProductDB.product_url,
                 store=p.store_name
             )

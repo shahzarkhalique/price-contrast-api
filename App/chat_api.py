@@ -73,7 +73,7 @@ async def chat(request: ChatRequest):
                     {
                         "product_id": doc.metadata["id"],
                         "product_name": doc.metadata["name"],
-                        "image_url": doc.metadata["image"],
+                        "image_urls": doc.metadata["image"],
                         "stores": {
                             "store_name": doc.metadata["store"]
                         },
