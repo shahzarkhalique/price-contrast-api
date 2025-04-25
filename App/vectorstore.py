@@ -15,7 +15,7 @@ def create_vector_store(products, cache_path="vector_store.faiss"):
                     "id": product.id,
                     "name": product.name,
                     "price": product.price if product.price is not None else None,
-                    "image": product.image,
+                    "image": product.image,  # Ensure this is an array of URLs
                     "url": product.url,
                     "store": product.store
                 },
@@ -36,7 +36,7 @@ def update_vector_store(vector_db, new_products, cache_path="vector_store.faiss"
                 "id": product.id,
                 "name": product.name,
                 "price": product.price if product.price is not None else None,
-                "image": product.image,
+                "image": product.image,  # Ensure this is an array of URLs
                 "url": product.url,
                 "store": product.store
             },

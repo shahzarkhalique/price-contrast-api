@@ -56,13 +56,12 @@ def get_all_products():
                 id=p.ProductDB.product_id,
                 name=p.ProductDB.product_name,
                 price=p.price if p.price is not None else None,
-                image=p.ProductDB.image_urls,
+                image=p.ProductDB.image_urls[0] if p.ProductDB.image_urls else None,  # Use the first image URL
                 url=p.ProductDB.product_url,
                 store=p.store_name
             )
             for p in products
         ]
-
 def get_product_count_and_max_id():
     with Session(engine) as session:
         count = session.execute(select(func.count()).select_from(ProductDB).where(ProductDB.is_active == True)).scalar()
@@ -83,7 +82,7 @@ def get_new_products(last_max_id):
                 id=p.ProductDB.product_id,
                 name=p.ProductDB.product_name,
                 price=p.price if p.price is not None else None,
-                image=p.ProductDB.image_urls,
+                image=p.ProductDB.image_urls[0] if p.ProductDB.image_urls else None,  # Use the first image URL
                 url=p.ProductDB.product_url,
                 store=p.store_name
             )

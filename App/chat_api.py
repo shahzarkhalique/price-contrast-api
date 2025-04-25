@@ -73,7 +73,7 @@ async def chat(request: ChatRequest):
                     {
                         "product_id": doc.metadata["id"],
                         "product_name": doc.metadata["name"],
-                        "image_urls": doc.metadata["image"],
+                        "image_urls": doc.metadata["image"],  # Ensure this is returned as an array
                         "stores": {
                             "store_name": doc.metadata["store"]
                         },
@@ -89,7 +89,7 @@ async def chat(request: ChatRequest):
     except Exception as e:
         print(f"Error processing query: {e}")
         raise HTTPException(status_code=500, detail=str(e))
-
+    
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
